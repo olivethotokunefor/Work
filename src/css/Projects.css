@@ -1,0 +1,347 @@
+.projects-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #0d1117, #161b22);
+  color: #f0f6fc;
+}
+
+.projectscontainer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.header h2 {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.header h2::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #8b5cf6, #3b82f6); /* purple to blue */
+  border-radius: 2px;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientGlow {
+  0% {
+    box-shadow: 0 0 10px #4f46e5;
+  }
+  50% {
+    box-shadow: 0 0 25px #8b5cf6, 0 0 40px #3b82f6;
+  }
+  100% {
+    box-shadow: 0 0 10px #4f46e5;
+  }
+}
+
+@keyframes hoverBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.projects-section {
+  animation: fadeInSlide 1s ease forwards;
+  opacity: 0;
+}
+
+.header h2 {
+  animation: fadeInSlide 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.header h2::before {
+  animation: gradientGlow 3s infinite alternate;
+}
+
+.filter-buttons button {
+  animation: fadeInSlide 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.project-card {
+  opacity: 0;
+  animation: fadeInSlide 0.8s ease forwards;
+  animation-delay: 0.6s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(75, 85, 99, 0.3);
+}
+/* Default hidden state */
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+  animation-play-state: paused;
+}
+
+/* Trigger animation when in view */
+.project-card:has(*) {
+  animation-play-state: running;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Keyframe animation */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Default state */
+.projects-section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInSlide 1s ease forwards;
+  animation-delay: 0.3s;
+}
+.projects-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.projects-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.project-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.projects-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.projects-section.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.projects-section {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.projects-section.in-view {
+  opacity: 1;
+}
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.project-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Add this to make sure you apply the animation when the section is in view */
+.projects-section:in-viewport {
+  animation: fadeIn 1s ease forwards;
+}
+
+.outline-button {
+  animation: fadeInSlide 1s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outline-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #facc15;
+}
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+
+
+.header h2 {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #8b949e;
+}
+
+.filter-buttons {
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: 2px solid #8b949e;
+  background: transparent;
+  color: #f0f6fc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: #4f46e5;
+  color: #fff;
+  border-color: #4f46e5;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+  background: #161b22;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  border: 1px solid #30363d;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-icon {
+  background: #1f2937;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.project-icon .icon {
+  font-size: 2rem;
+  color: #4f46e5;
+}
+
+.project-icon .pink {
+  color: #ec4899;
+}
+
+.project-icon .green {
+  color: #10b981;
+}
+
+/* .tools {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+} */
+
+.tools  {
+  background: #312e81;
+  color: #c7d2fe;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.outline-button {
+  padding: 12px 24px;
+  border: 2px solid #facc15;
+  background: transparent;
+  border-radius: 30px;
+  color: #facc15;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.outline-button:hover {
+  background: rgba(250, 204, 21, 0.1);
+}
