@@ -144,6 +144,11 @@
 .experience-section {
   margin-top: 4rem;
 }
+@media (max-width: 767px) {
+  .about-image {
+    margin: 0 auto; /* centers horizontally */
+  }
+}
 
 .experience-title {
   font-size: 1.5rem;
@@ -177,7 +182,14 @@
     justify-content: space-between;
     align-items: center;
   }
+  
 }
+/* @media (max-width: 768px) {
+  .about-section {
+    padding: 20px;
+  }
+
+} */
 
 .position {
   font-size: 1.125rem;

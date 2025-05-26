@@ -95,13 +95,15 @@ const Hero = () => {
             I create data-driven solutions that help businesses make better decisions
             through advanced analytics and visualizations.
           </p>
-          <div className="buttons">
-            <button className="btn-primary">
-              View Projects
-              <span className="arrow">→</span>
-            </button>
-            <button className="btn-outline">Contact Me</button>
-          </div>
+         <div className="buttons">
+  <a href="#projects" className="btn-primary" style={{textDecoration:"none"}}>
+    View Projects <span className="arrow">→</span>
+  </a>
+  <a href="#contact" className="btn-outline" style={{textDecoration:"none"}}>
+    Contact Me
+  </a>
+</div>
+
         </div>
 
         <div className="hero-avatar">
